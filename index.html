@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carrusel de Productos</title>
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+  <!-- CSS Personalizado -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Sección que estará antes del carrusel -->
+  <section class="section-content">
+    <!-- Contenedor separado para el canvas -->
+    <div class="canvas-container">
+      <canvas id="giftCanvas"></canvas>
+    </div>
+    <!-- Puedes agregar más contenido aquí dentro de la sección -->
+  </section>
+
+  <div class="carousel-container">
+    <!-- Carrusel de Swiper -->
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+        <!-- Tarjeta 1 -->
+        <div class="swiper-slide card">
+          <div class="icons">
+            <span class="heart" onclick="addLike(this)">❤️ <span>0</span></span>
+            <span class="share" onclick="shareOnFacebook('imagen1.png')">🔗</span>
+          </div>
+          <img src="imagen1.png" alt="Producto 1">
+          <h3>LUXORA</h3>
+          <p>Bolso elegante con estilo único.</p>
+        </div>
+        <!-- Tarjeta 2 -->
+        <div class="swiper-slide card">
+          <div class="icons">
+            <span class="heart" onclick="addLike(this)">❤️ <span>0</span></span>
+            <span class="share" onclick="shareOnFacebook('imagen2.png')">🔗</span>
+          </div>
+          <img src="imagen2.png" alt="Producto 2">
+          <h3>GRANDEUR</h3>
+          <p>Bolso de alta calidad para ocasiones especiales.</p>
+        </div>
+        <!-- Tarjeta 3 -->
+        <div class="swiper-slide card">
+          <div class="icons">
+            <span class="heart" onclick="addLike(this)">❤️ <span>0</span></span>
+            <span class="share" onclick="shareOnFacebook('imagen3.png')">🔗</span>
+          </div>
+          <img src="imagen3.png" alt="Producto 3">
+          <h3>PRESTIGIO</h3>
+          <p>Bolso premium con diseño innovador.</p>
+        </div>
+      </div>
+
+      <!-- Botones de navegación -->
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+
+      <!-- Paginación -->
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+
+  <!-- Swiper JS -->
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <!-- JS Personalizado -->
+  <script src="scripts.js"></script>
+
+  <script>
+    const swiper = new Swiper('.swiper-container', {
+      slidesPerView: 1,       // Solo una imagen por vez
+      spaceBetween: 10,        // Espacio entre las imágenes
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev'
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true
+      },
+      breakpoints: {
+        768: {
+          slidesPerView: 2,   // Mostrar 2 imágenes en pantallas más grandes
+          spaceBetween: 20
+        }
+      }
+    });
+  </script>
+</body>
+</html>
