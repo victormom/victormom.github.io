@@ -6,70 +6,69 @@ body {
   background-color: #f5f5f5;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
   align-items: center;
   min-height: 100vh;
 }
 
-/* Sección (Canvas) */
+/* Canvas */
 .section-content {
   width: 100%;
-  max-width: 800px;
   text-align: center;
   padding: 20px;
-  background-color: #fff;
-  margin-bottom: 40px; /* Espacio entre la sección y el carrusel */
-}
-
-.canvas-container {
-  margin: 0 auto;
-  max-width: 800px;
 }
 
 #giftCanvas {
-  max-width: 100%;
-  height: auto;
-  background-color: #e0e0e0; /* Color de fondo para que se vea bien */
-  margin: 0 auto;
-  display: block;
-  border-radius: 8px;
+  width: 100%;
+  max-width: 600px;
+  height: 300px;
+  background-color: #e0e0e0;
+  border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Estilos para el Carrusel */
+/* Carrusel */
 .carousel-container {
   width: 100%;
-  max-width: 800px;  /* Restauramos el tamaño original del carrusel */
-  margin: 0 auto;
-  padding: 20px 0;
+  max-width: 600px;
+  height: 300px; /* Igual al canvas */
+  margin: 20px auto;
+  position: relative;
 }
 
 .swiper-container {
   width: 100%;
+  height: 100%; /* Asegura que ocupe todo el área */
 }
 
 .swiper-wrapper {
   display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  position: relative;
 }
 
 .swiper-slide {
   display: flex;
-  justify-content: center;
   flex-direction: column;
   align-items: center;
-  background: #fff;
+  justify-content: center;
+  background: #ffffff;
   border-radius: 10px;
   padding: 20px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  height: 100%; /* Asegura que las tarjetas tengan el mismo tamaño */
+  transition: transform 0.3s ease; /* Para animar la transición */
+  flex-shrink: 0;
 }
 
 .swiper-slide img {
-  width: 100%;
-  max-width: 300px;
-  height: auto;
-  margin-bottom: 20px;
+  max-width: 100%;
+  max-height: 180px; /* Aumentamos el tamaño máximo de la imagen */
+  object-fit: contain;
   border-radius: 10px;
+  margin-bottom: 15px;
 }
 
 .swiper-slide h3 {
@@ -78,55 +77,31 @@ body {
 }
 
 .swiper-slide p {
-  font-size: 1rem;
+  font-size: 0.9rem;
   color: #555;
 }
 
-/* Iconos */
-.icons {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  display: flex;
-  gap: 10px;
-}
-
-.heart, .share {
-  font-size: 1.5rem;
-  cursor: pointer;
-  user-select: none;
-}
-
-/* Estilos de los botones de navegación */
-.swiper-button-next, .swiper-button-prev {
-  color: #000;
-  font-size: 30px;
-  z-index: 10; /* Para asegurarnos que los botones no se tapen con las imágenes */
-}
-
-/* Paginación */
+/* Paginación personalizada */
 .swiper-pagination {
   position: absolute;
   bottom: 10px;
-  width: 100%;
   text-align: center;
+  width: 100%;
 }
 
-/* Responsividad */
-@media (max-width: 768px) {
-  .section-content {
-    padding: 15px;
-  }
+.swiper-pagination-bullet {
+  background: #000; /* Color de los puntos */
+  opacity: 0.5;
+  transition: opacity 0.3s ease;
+}
 
-  .swiper-slide h3 {
-    font-size: 1rem;
-  }
+.swiper-pagination-bullet-active {
+  opacity: 1; /* Punto activo más visible */
+}
 
-  .swiper-slide p {
-    font-size: 0.9rem;
-  }
-
-  .swiper-button-next, .swiper-button-prev {
-    font-size: 25px;
-  }
+/* Estilo para la visualización parcial de las tarjetas fuera del centro */
+.swiper-slide-next,
+.swiper-slide-prev {
+  opacity: 0.5; /* Reduce la opacidad de las tarjetas fuera de foco */
+  transform: scale(0.8); /* Hace las tarjetas fuera de foco más pequeñas */
 }
