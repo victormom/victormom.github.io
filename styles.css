@@ -182,3 +182,90 @@ body {
     padding: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
+
+
+/* Snow Animation */
+body::before, header::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background-image: url('https://www.transparenttextures.com/patterns/snow.png');
+    animation: snowfall 10s linear infinite;
+    opacity: 0.5;
+    z-index: -1;
+}
+
+/* Form Styling (Centered) */
+form {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 2px solid #9e4d94;
+    border-radius: 10px;
+    background-color: #bba6f5;
+    color: #e5848b;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #9e4d94;
+    border-radius: 5px;
+    background-color: #fdf0f5;
+    color: #9e4d94;
+}
+
+form button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #e5848b;
+    color: white;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #9e4d94;
+}
+
+/* Snow Animation */
+body::before, header::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background-image: url('https://www.transparenttextures.com/patterns/snow.png');
+    animation: snowfall 10s linear infinite;
+    opacity: 0.5;
+    z-index: -1;
+}
+
+
+/* Updated Snow Animation */
+header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background-image: url('https://www.transparenttextures.com/patterns/snow.png');
+    animation: snowfall 10s linear infinite;
+    opacity: 0.5;
+    z-index: -1;
+}

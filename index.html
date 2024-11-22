@@ -10,6 +10,11 @@
     <script src="script.js" defer></script>
 </head>
 <body>
+
+<header style="text-align: center; font-size: 2em; margin: 20px 0; color: #ff6f61;">
+    Happy Birthday
+</header>
+
     <!-- Sección de la caja de regalo -->
     <section class="seccion-regalo">
         <div class="caja-regalo" onclick="abrirRegalo()">
@@ -89,5 +94,69 @@
             <button class="flecha flecha-derecha" onclick="moverCarrusel(1, 'comentarios')">&#9654;</button>
         </div>
     </section>
+
+
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js";
+  import { getDatabase, ref, push, onValue } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-database.js";
+
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyAcj4TfHgTL1pFAzEWlnc7DfI9Lk1n_SLc",
+    authDomain: "comentarios-5d5d0.firebaseapp.com",
+    databaseURL: "https://comentarios-5d5d0-default-rtdb.firebaseio.com",
+    projectId: "comentarios-5d5d0",
+    storageBucket: "comentarios-5d5d0.firebasestorage.app",
+    messagingSenderId: "43302091531",
+    appId: "1:43302091531:web:db703bc68697c26803800e"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const database = getDatabase(app);
+
+  // Send a comment to Firebase
+  function sendComment() {
+      const name = document.getElementById("name").value;
+      const comment = document.getElementById("comment").value;
+
+      if (name && comment) {
+          const commentRef = ref(database, "comments");
+          push(commentRef, {
+              name: name,
+              comment: comment,
+              timestamp: Date.now()
+          });
+
+          // Clear form fields
+          document.getElementById("name").value = "";
+          document.getElementById("comment").value = "";
+      }
+  }
+
+  // Load comments from Firebase
+  function loadComments() {
+      const commentRef = ref(database, "comments");
+      onValue(commentRef, (snapshot) => {
+          const commentsContainer = document.getElementById("comments-container");
+          commentsContainer.innerHTML = ""; // Clear previous content
+
+          snapshot.forEach((childSnapshot) => {
+              const commentData = childSnapshot.val();
+              const commentElement = document.createElement("div");
+              commentElement.innerHTML = `<strong>${commentData.name}:</strong> ${commentData.comment}`;
+              commentsContainer.appendChild(commentElement);
+          });
+      });
+  }
+
+  // Load comments when the page is ready
+  window.onload = loadComments;
+</script>
+
+
+
+
 </body>
 </html>
