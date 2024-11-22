@@ -26,16 +26,52 @@
     <section class="seccion-carrusel">
         <h2>Recuerdos especiales</h2>
         <div class="carrusel-container">
-            <button class="flecha flecha-izquierda" onclick="moverCarrusel(-1)">&#9664;</button>
+            <button class="flecha flecha-izquierda" onclick="moverCarrusel(-1, 'imagenes')">&#9664;</button>
             <div class="carrusel-imagenes">
-                <div class="carrusel-item"><img src="imagenes/imagen1.png" alt="Imagen 1"></div>
-                <div class="carrusel-item"><img src="imagenes/imagen2.png" alt="Imagen 2"></div>
-                <div class="carrusel-item"><img src="imagenes/imagen3.png" alt="Imagen 3"></div>
-                <div class="carrusel-item"><img src="imagenes/imagen4.png" alt="Imagen 4"></div>
-                <div class="carrusel-item"><img src="imagenes/imagen5.png" alt="Imagen 5"></div>
-                <div class="carrusel-item"><img src="imagenes/imagen6.png" alt="Imagen 6"></div>
+                <div class="carrusel-item">
+                    <img src="imagenes/imagen1.png" alt="Imagen 1">
+                    <div class="caption">
+                        <h3>Eres la mejor esposa</h3>
+                        <p>"El amor verdadero no tiene final feliz, porque el amor verdadero nunca termina."</p>
+                    </div>
+                </div>
+                <div class="carrusel-item">
+                    <img src="imagenes/imagen2.png" alt="Imagen 2">
+                    <div class="caption">
+                        <h3>Eres la mejor amiga</h3>
+                        <p>"La amistad duplica las alegrías y divide las angustias por la mitad."</p>
+                    </div>
+                </div>
+                <div class="carrusel-item">
+                    <img src="imagenes/imagen3.png" alt="Imagen 3">
+                    <div class="caption">
+                        <h3>Eres la mejor compañera</h3>
+                        <p>"La vida es mejor cuando la compartes con alguien que te entiende."</p>
+                    </div>
+                </div>
+                <div class="carrusel-item">
+                    <img src="imagenes/imagen4.png" alt="Imagen 4">
+                    <div class="caption">
+                        <h3>Eres mi inspiración</h3>
+                        <p>"Eres la razón por la que sonrío cada día."</p>
+                    </div>
+                </div>
+                <div class="carrusel-item">
+                    <img src="imagenes/imagen5.png" alt="Imagen 5">
+                    <div class="caption">
+                        <h3>Mi confidente</h3>
+                        <p>"Contigo, todos mis secretos están a salvo."</p>
+                    </div>
+                </div>
+                <div class="carrusel-item">
+                    <img src="imagenes/imagen6.png" alt="Imagen 6">
+                    <div class="caption">
+                        <h3>Mi apoyo incondicional</h3>
+                        <p>"Gracias por estar siempre a mi lado."</p>
+                    </div>
+                </div>
             </div>
-            <button class="flecha flecha-derecha" onclick="moverCarrusel(1)">&#9654;</button>
+            <button class="flecha flecha-derecha" onclick="moverCarrusel(1, 'imagenes')">&#9654;</button>
         </div>
     </section>
 
@@ -47,7 +83,11 @@
             <textarea name="mensaje" placeholder="Escribe tu mensaje" required></textarea>
             <button type="submit">Enviar</button>
         </form>
-        <div class="carrusel-comentarios"></div>
+        <div class="carrusel-comentarios-container">
+            <button class="flecha flecha-izquierda" onclick="moverCarrusel(-1, 'comentarios')">&#9664;</button>
+            <div class="carrusel-comentarios"></div>
+            <button class="flecha flecha-derecha" onclick="moverCarrusel(1, 'comentarios')">&#9654;</button>
+        </div>
     </section>
 </body>
 </html>

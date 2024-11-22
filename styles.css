@@ -116,6 +116,20 @@ body {
     border-radius: 10px;
 }
 
+.caption {
+    margin-top: 10px;
+}
+
+.caption h3 {
+    font-size: 18px;
+    color: var(--morado);
+}
+
+.caption p {
+    font-size: 14px;
+    color: #555;
+}
+
 .flecha {
     position: absolute;
     top: 50%;
@@ -147,18 +161,24 @@ body {
 }
 
 /* Comentarios */
-.carrusel-comentarios {
-    display: flex;
-    gap: 10px;
-    overflow-x: auto;
-    padding: 10px 0;
+.carrusel-comentarios-container {
+    position: relative;
+    width: 80%;
+    margin: 0 auto;
+    overflow: hidden;
 }
 
-.carrusel-comentarios .comentario-item {
+.carrusel-comentarios {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.comentario-item {
+    flex: 0 0 auto;
+    width: 100%;
     background-color: var(--lila);
     border-radius: 10px;
-    padding: 15px;
-    flex: 0 0 200px;
     text-align: center;
+    padding: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }

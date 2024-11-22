@@ -35,21 +35,38 @@ function lanzarGlobos() {
     }
 }
 
-// Carrusel de imágenes
-let currentIndex = 0;
+let currentIndexImagenes = 0;
+let currentIndexComentarios = 0;
 
-function moverCarrusel(direccion) {
-    const carrusel = document.querySelector(".carrusel-imagenes");
-    const items = document.querySelectorAll(".carrusel-item");
+function moverCarrusel(direccion, tipo) {
+    let currentIndex;
+    let carrusel;
+    let items;
+
+    if (tipo === "imagenes") {
+        currentIndex = currentIndexImagenes;
+        carrusel = document.querySelector(".carrusel-imagenes");
+        items = document.querySelectorAll(".carrusel-imagenes .carrusel-item");
+    } else if (tipo === "comentarios") {
+        currentIndex = currentIndexComentarios;
+        carrusel = document.querySelector(".carrusel-comentarios");
+        items = document.querySelectorAll(".carrusel-comentarios .comentario-item");
+    }
+
     currentIndex += direccion;
 
     if (currentIndex < 0) currentIndex = items.length - 1;
     if (currentIndex >= items.length) currentIndex = 0;
 
+    if (tipo === "imagenes") {
+        currentIndexImagenes = currentIndex;
+    } else if (tipo === "comentarios") {
+        currentIndexComentarios = currentIndex;
+    }
+
     carrusel.style.transform = `translateX(-${currentIndex * 100}%)`;
 }
 
-// Comentarios dinámicos
 function guardarComentario() {
     const nombre = document.querySelector("input[name='nombre']").value;
     const mensaje = document.querySelector("textarea[name='mensaje']").value;
