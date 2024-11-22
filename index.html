@@ -97,6 +97,7 @@
 
 
 
+
 <script type="module">
   import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js";
   import { getDatabase, ref, push, onValue } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-database.js";
@@ -140,6 +141,13 @@
       const commentRef = ref(database, "comments");
       onValue(commentRef, (snapshot) => {
           const commentsContainer = document.getElementById("comments-container");
+
+          // Validate if the container exists before trying to update it
+          if (!commentsContainer) {
+              console.error("El contenedor de comentarios no se encuentra en la página.");
+              return;
+          }
+
           commentsContainer.innerHTML = ""; // Clear previous content
 
           snapshot.forEach((childSnapshot) => {
