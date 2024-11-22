@@ -3,6 +3,8 @@
     --rosa: #E5848B;
     --morado: #9E4D94;
     --lila: #BBA6F5;
+    --dorado: #FFD700;
+    --rojo: #FF4500;
 }
 
 /* Estilos generales */
@@ -29,186 +31,7 @@ body {
     position: relative;
     width: 200px;
     height: 200px;
-    cursor: pointer;
-    margin-bottom: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-}
-
-.cinta-horizontal, .cinta-vertical {
-    position: absolute;
-    background-color: #E5848B;
-    transition: all 0.5s ease;
-}
-
-.cinta-horizontal {
-    width: 100%;
-    height: 20px;
-    top: 90px;
-}
-
-.cinta-vertical {
-    height: 100%;
-    width: 20px;
-    left: 90px;
-}
-
-.tapa {
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: 50%;
-    background: #ffcc00;
-    border: 3px solid #d2691e;
-    z-index: 2;
-    border-radius: 10px 10px 0 0;
-}
-
-.moño {
-    position: absolute;
-    top: 15%;
-    left: 40%;
-    width: 30px;
-    height: 30px;
-    background: #ff4d4d;
-    border-radius: 50%;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-}
-
-.cuerpo {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 50%;
-    background: #ffcc00;
-    border: 3px solid #d2691e;
-    border-radius: 0 0 10px 10px;
-}
-
-/* Animación para que se destape la caja */
-@keyframes abrirCaja {
-    0% { transform: rotateX(0); }
-    100% { transform: rotateX(120deg); }
-}
-
-/* Sección 2: Carrusel */
-.seccion-carrusel {
-    padding: 50px;
-    background: var(--morado);
-    color: #fff;
-}
-
-.carrusel {
-    display: flex;
-    overflow: hidden;
-    gap: 10px;
-}
-
-.imagen {
-    flex: 1;
-    background-size: cover;
-    background-position: center;
-    text-align: center;
-    padding: 20px;
-}
-
-/* Sección 3: Comentarios */
-.seccion-comentarios {
-    padding: 50px;
-    background: var(--lila);
-}
-
-form input, form textarea {
-    width: 100%;
-    margin-bottom: 10px;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-}
-
-form button {
-    background: var(--morado);
-    color: white;
-    border: none;
-    padding: 10px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.comentarios .card {
-    background: #fff;
-    padding: 20px;
-    margin: 10px;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-/* Animación de los globos */
-@keyframes flotar {
-    0% {
-        bottom: -10px;
-    }
-    100% {
-        bottom: 100%;
-        opacity: 0;
-    }
-}
-
-.globo {
-    position: absolute;
-    bottom: 0;
-    width: 50px;
-    height: 80px;
-    background-color: #ff4d4d;
-    border-radius: 50%;
-    animation: flotar 10s linear infinite;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-}
-
-/* Estilos para el carrusel */
-.carrusel {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    overflow: hidden;
-    position: relative;
-    height: 300px;
-    margin: 20px auto;
-}
-
-.carrusel-item {
-    flex: 0 0 auto;
-    width: 80%;
-    height: 100%;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 20px;
-    transition: transform 0.5s ease;
-}
-
-.carrusel-item img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 10px;
-}
-
-/* Estilo actualizado para la caja de regalo */
-.caja-regalo {
-    position: relative;
-    width: 200px;
-    height: 200px;
-    background-color: #FFD700; /* Color dorado */
+    background-color: var(--dorado);
     border: 2px solid #B8860B;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -216,13 +39,14 @@ form button {
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    cursor: pointer;
 }
 
 .cinta-horizontal {
     position: absolute;
     width: 100%;
     height: 20px;
-    background-color: #FF4500; /* Color rojo */
+    background-color: var(--rojo);
     top: 50%;
     transform: translateY(-50%);
 }
@@ -231,7 +55,7 @@ form button {
     position: absolute;
     width: 20px;
     height: 100%;
-    background-color: #FF4500;
+    background-color: var(--rojo);
     left: 50%;
     transform: translateX(-50%);
 }
@@ -241,37 +65,100 @@ form button {
     top: 0;
     width: 100%;
     height: 50%;
-    background-color: #FFD700;
+    background-color: var(--dorado);
     border-bottom: 2px solid #B8860B;
     border-radius: 10px 10px 0 0;
 }
 
-/* Ajuste del carrusel para evitar recortes y mover texto debajo de la imagen */
-.carrusel-item {
-    flex: 0 0 auto;
+/* Globos */
+.globo {
+    position: absolute;
+    bottom: 0;
+    width: 40px;
+    height: 60px;
+    background: radial-gradient(circle at 50% 50%, #ff8080, #ff4040);
+    border-radius: 50%;
+    animation: subirGlobo 5s linear infinite;
+}
+
+@keyframes subirGlobo {
+    0% {
+        transform: translateY(100vh);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100vh);
+        opacity: 0;
+    }
+}
+
+/* Sección 2: Carrusel */
+.carrusel-container {
+    position: relative;
     width: 80%;
-    max-width: 400px;
-    height: auto;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    text-align: center;
-    padding: 20px;
-    margin: auto;
+    margin: 20px auto;
     overflow: hidden;
 }
 
-.carrusel-item img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
-    margin-bottom: 15px;
+.carrusel-imagenes {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
 }
 
-.carrusel-item h3, .carrusel-item p {
-    margin: 5px 0;
+.carrusel-item {
+    min-width: 100%;
+    text-align: center;
+}
+
+.carrusel img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.flecha {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var(--morado);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.flecha-izquierda {
+    left: 10px;
+}
+
+.flecha-derecha {
+    right: 10px;
+}
+
+.flecha:hover {
+    background-color: var(--rosa);
+}
+
+/* Comentarios */
+.carrusel-comentarios {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    padding: 10px 0;
+}
+
+.carrusel-comentarios .comentario-item {
+    background-color: var(--lila);
+    border-radius: 10px;
+    padding: 15px;
+    flex: 0 0 200px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }

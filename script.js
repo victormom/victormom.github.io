@@ -1,88 +1,67 @@
-
-// Función para abrir la caja de regalo con animación
-function mostrarMensaje() {
-    const mensaje = document.getElementById("mensaje");
-    
-    mensaje.style.display = "block";  // Mostrar el mensaje al hacer clic
-    gsap.fromTo(mensaje, { opacity: 0 }, { opacity: 1, duration: 1 });  // Animación suave
-     // Mostrar el mensaje
-}
-
-
+// Función para abrir la caja de regalo con globos y confeti
 function abrirRegalo() {
     const tapa = document.querySelector(".tapa");
-    const cintaHorizontal = document.querySelector(".cinta-horizontal");
-    const cintaVertical = document.querySelector(".cinta-vertical");
-    const cuerpo = document.querySelector(".cuerpo");
     const mensaje = document.getElementById("mensaje");
 
-    // Animación de apertura usando GSAP
+    // Animación de apertura de la tapa
     gsap.to(tapa, { y: -200, rotationX: 120, duration: 1 });
-    gsap.to(cuerpo, { opacity: 0, duration: 1 });
 
-    // Animaciones para las cintas
-    gsap.to(cintaHorizontal, { width: 0, duration: 0.5 });
-    gsap.to(cintaVertical, { height: 0, duration: 0.5 });
-
-    // Mostrar el mensaje después de que la caja se haya abierto
+    // Confeti y globos
     setTimeout(() => {
-        
-    mensaje.style.display = "block";  // Mostrar el mensaje al hacer clic
-    gsap.fromTo(mensaje, { opacity: 0 }, { opacity: 1, duration: 1 });  // Animación suave
-    
+        lanzarConfeti();
+        lanzarGlobos();
+    }, 800);
+
+    // Mostrar el mensaje
+    setTimeout(() => {
+        mensaje.style.display = "block";
+        gsap.fromTo(mensaje, { opacity: 0 }, { opacity: 1, duration: 1 });
     }, 1000);
-
-    // Efecto de confeti
-    confetti({
-        particleCount: 100,
-        spread: 90,
-        origin: { y: 0.5 }
-    });
-
-    // Crear globos flotantes
-    crearGlobos();
 }
 
-// Función para crear globos flotantes
-function crearGlobos() {
-    for (let i = 0; i < 5; i++) {
+function lanzarConfeti() {
+    confetti({ particleCount: 100, spread: 60 });
+}
+
+function lanzarGlobos() {
+    const body = document.body;
+    for (let i = 0; i < 8; i++) {
         const globo = document.createElement("div");
-        globo.classList.add("globo");
-        document.body.appendChild(globo);
-
-        // Posicionar cada globo aleatoriamente
-        globo.style.left = `${Math.random() * window.innerWidth}px`;
-
-        // Hacer que cada globo flote con animación
-        setTimeout(() => {
-            globo.style.animation = "flotar 10s linear infinite";
-        }, 100);
+        globo.className = "globo";
+        globo.style.left = `${Math.random() * 100}vw`;
+        globo.style.animationDelay = `${Math.random() * 2}s`;
+        body.appendChild(globo);
+        setTimeout(() => body.removeChild(globo), 5000);
     }
 }
 
-// Guardar comentarios en un arreglo y generar el carrusel
-const comentarios = [];
+// Carrusel de imágenes
+let currentIndex = 0;
 
+function moverCarrusel(direccion) {
+    const carrusel = document.querySelector(".carrusel-imagenes");
+    const items = document.querySelectorAll(".carrusel-item");
+    currentIndex += direccion;
+
+    if (currentIndex < 0) currentIndex = items.length - 1;
+    if (currentIndex >= items.length) currentIndex = 0;
+
+    carrusel.style.transform = `translateX(-${currentIndex * 100}%)`;
+}
+
+// Comentarios dinámicos
 function guardarComentario() {
     const nombre = document.querySelector("input[name='nombre']").value;
     const mensaje = document.querySelector("textarea[name='mensaje']").value;
 
     if (nombre && mensaje) {
-        comentarios.push({ nombre, mensaje });
-        generarCarrusel();
+        const carrusel = document.querySelector(".carrusel-comentarios");
+        const item = document.createElement("div");
+        item.className = "comentario-item";
+        item.innerHTML = `<h3>${nombre}</h3><p>${mensaje}</p>`;
+        carrusel.appendChild(item);
+
         document.querySelector("input[name='nombre']").value = "";
         document.querySelector("textarea[name='mensaje']").value = "";
     }
-}
-
-function generarCarrusel() {
-    const carrusel = document.querySelector(".carrusel");
-    carrusel.innerHTML = ""; // Limpiar carrusel existente
-
-    comentarios.forEach((comentario) => {
-        const item = document.createElement("div");
-        item.className = "carrusel-item";
-        item.innerHTML = `<h3>${comentario.nombre}</h3><p>${comentario.mensaje}</p>`;
-        carrusel.appendChild(item);
-    });
 }

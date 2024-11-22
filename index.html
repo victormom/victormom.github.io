@@ -10,60 +10,44 @@
     <script src="script.js" defer></script>
 </head>
 <body>
-    <!-- Sección 1: Caja de regalos -->
+    <!-- Sección de la caja de regalo -->
     <section class="seccion-regalo">
         <div class="caja-regalo" onclick="abrirRegalo()">
+            <div class="tapa"></div>
             <div class="cinta-horizontal"></div>
             <div class="cinta-vertical"></div>
-            <div class="tapa">
-                <div class="moño"></div>
-            </div>
-            <div class="cuerpo"></div>
         </div>
-        <div class="mensaje" id="mensaje">
-            <h1>¡Felices 26 años, María Guadalupe!</h1>
-            <p>Que tengas un día increíble lleno de alegría y sorpresas.</p>
-        </div>
+        <p id="mensaje" style="display: none;">
+            ¡Felices 26 años, María Guadalupe! Que tengas un día increíble lleno de alegría y sorpresas.
+        </p>
     </section>
 
     <!-- Sección 2: Carrusel de imágenes -->
     <section class="seccion-carrusel">
-        <h2>Recuerdos Especiales</h2>
-        <div class="carrusel">
-            <div class="imagen" style="background-image: url('./imagenes/imagen1.png');">
-                <h3>Celebración 1</h3>
-                <p>Un momento único.</p>
+        <h2>Recuerdos especiales</h2>
+        <div class="carrusel-container">
+            <button class="flecha flecha-izquierda" onclick="moverCarrusel(-1)">&#9664;</button>
+            <div class="carrusel-imagenes">
+                <div class="carrusel-item"><img src="imagenes/imagen1.png" alt="Imagen 1"></div>
+                <div class="carrusel-item"><img src="imagenes/imagen2.png" alt="Imagen 2"></div>
+                <div class="carrusel-item"><img src="imagenes/imagen3.png" alt="Imagen 3"></div>
+                <div class="carrusel-item"><img src="imagenes/imagen4.png" alt="Imagen 4"></div>
+                <div class="carrusel-item"><img src="imagenes/imagen5.png" alt="Imagen 5"></div>
+                <div class="carrusel-item"><img src="imagenes/imagen6.png" alt="Imagen 6"></div>
             </div>
-            <div class="imagen" style="background-image: url('./imagenes/imagen2.png');">
-                <h3>Celebración 2</h3>
-                <p>Recuerdos inolvidables.</p>
-            </div>
-            <div class="imagen" style="background-image: url('./imagenes/imagen3.png');">
-                <h3>Celebración 3</h3>
-                <p>¡Sonríe siempre!</p>
-            </div>
-            <div class="imagen" style="background-image: url('./imagenes/imagen4.png');">
-                <h3>Celebración 1</h3>
-                <p>Un momento único.</p>
-            </div><div class="imagen" style="background-image: url('./imagenes/imagen5.png');">
-                <h3>Celebración 1</h3>
-                <p>Un momento único.</p>
-            </div><div class="imagen" style="background-image: url('./imagenes/imagen6.png');">
-                <h3>Celebración 1</h3>
-                <p>Un momento único.</p>
-            </div>
+            <button class="flecha flecha-derecha" onclick="moverCarrusel(1)">&#9654;</button>
         </div>
     </section>
 
-    <!-- Sección 3: Comentarios -->
+    <!-- Sección de comentarios -->
     <section class="seccion-comentarios">
         <h2>Deja tu comentario</h2>
-        <form id="form-comentarios">
-            <input type="text" id="nombre" placeholder="Tu nombre" required>
-            <textarea id="comentario" placeholder="Escribe tu mensaje" required></textarea>
+        <form onsubmit="guardarComentario(); return false;">
+            <input type="text" name="nombre" placeholder="Tu nombre" required>
+            <textarea name="mensaje" placeholder="Escribe tu mensaje" required></textarea>
             <button type="submit">Enviar</button>
         </form>
-        <div id="lista-comentarios" class="comentarios"></div>
+        <div class="carrusel-comentarios"></div>
     </section>
 </body>
 </html>
