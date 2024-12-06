@@ -1,271 +1,82 @@
-/* Paleta de colores */
-:root {
-    --rosa: #E5848B;
-    --morado: #9E4D94;
-    --lila: #BBA6F5;
-    --dorado: #FFD700;
-    --rojo: #FF4500;
-}
-
-/* Estilos generales */
-body {
-    font-family: 'Arial', sans-serif;
+/* Reset básico */
+* {
     margin: 0;
     padding: 0;
-    background: #f9f9f9;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
     color: #333;
-}
-
-/* Sección 1: Caja de regalo */
-.seccion-regalo {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    height: 100vh;
-    background: var(--rosa);
-    position: relative;
-}
-
-.caja-regalo {
-    position: relative;
-    width: 200px;
-    height: 200px;
-    background-color: var(--dorado);
-    border: 2px solid #B8860B;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    cursor: pointer;
-}
-
-.cinta-horizontal {
-    position: absolute;
-    width: 100%;
-    height: 20px;
-    background-color: var(--rojo);
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-.cinta-vertical {
-    position: absolute;
-    width: 20px;
-    height: 100%;
-    background-color: var(--rojo);
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.tapa {
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: 50%;
-    background-color: var(--dorado);
-    border-bottom: 2px solid #B8860B;
-    border-radius: 10px 10px 0 0;
-}
-
-/* Globos */
-.globo {
-    position: absolute;
-    bottom: 0;
-    width: 40px;
-    height: 60px;
-    background: radial-gradient(circle at 50% 50%, #ff8080, #ff4040);
-    border-radius: 50%;
-    animation: subirGlobo 5s linear infinite;
-}
-
-@keyframes subirGlobo {
-    0% {
-        transform: translateY(100vh);
-        opacity: 1;
-    }
-    100% {
-        transform: translateY(-100vh);
-        opacity: 0;
-    }
-}
-
-/* Sección 2: Carrusel */
-.carrusel-container {
-    position: relative;
-    width: 80%;
-    margin: 20px auto;
-    overflow: hidden;
-}
-
-.carrusel-imagenes {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-}
-
-.carrusel-item {
-    min-width: 100%;
+    min-height: 100vh;
+  }
+  
+  header {
     text-align: center;
-}
-
-.carrusel img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-}
-
-.caption {
-    margin-top: 10px;
-}
-
-.caption h3 {
-    font-size: 18px;
-    color: var(--morado);
-}
-
-.caption p {
-    font-size: 14px;
+    margin: 20px 0;
+  }
+  
+  header h1 {
+    font-size: 2.5rem;
+    color: #007acc;
+  }
+  
+  header p {
+    font-size: 1.2rem;
     color: #555;
-}
-
-.flecha {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: var(--morado);
-    color: white;
-    border: none;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    cursor: pointer;
-    font-size: 18px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 10;
-}
-
-.flecha-izquierda {
-    left: 10px;
-}
-
-.flecha-derecha {
-    right: 10px;
-}
-
-.flecha:hover {
-    background-color: var(--rosa);
-}
-
-/* Comentarios */
-.carrusel-comentarios-container {
-    position: relative;
-    width: 80%;
-    margin: 0 auto;
-    overflow: hidden;
-}
-
-.carrusel-comentarios {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-}
-
-.comentario-item {
-    flex: 0 0 auto;
-    width: 100%;
-    background-color: var(--lila);
-    border-radius: 10px;
-    text-align: center;
-    padding: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-
-
-/* Snow Animation */
-body::before, header::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    background-image: url('https://www.transparenttextures.com/patterns/snow.png');
-    animation: snowfall 10s linear infinite;
-    opacity: 0.5;
-    z-index: -1;
-}
-
-/* Form Styling (Centered) */
-form {
-    max-width: 500px;
-    margin: 0 auto;
+  }
+  
+  main {
+    width: 90%;
+    max-width: 800px;
+  }
+  
+  .projects {
+    margin-top: 30px;
+  }
+  
+  .project, .coming-soon {
+    background-color: #fff;
+    margin-bottom: 20px;
     padding: 20px;
-    border: 2px solid #9e4d94;
-    border-radius: 10px;
-    background-color: #bba6f5;
-    color: #e5848b;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    text-align: left;
-}
-
-form input, form textarea {
-    width: 100%;
-    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .project h3, .coming-soon h3 {
     margin-bottom: 10px;
-    border: 1px solid #9e4d94;
+    font-size: 1.5rem;
+  }
+  
+  .project p {
+    font-size: 1rem;
+    color: #555;
+  }
+  
+  .btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #007acc;
+    color: #fff;
+    text-decoration: none;
     border-radius: 5px;
-    background-color: #fdf0f5;
-    color: #9e4d94;
-}
-
-form button {
-    width: 100%;
+  }
+  
+  .btn:hover {
+    background-color: #005f99;
+  }
+  
+  footer {
+    margin-top: auto;
+    text-align: center;
     padding: 10px;
-    border: none;
-    border-radius: 5px;
-    background-color: #e5848b;
-    color: white;
-    font-size: 1em;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-form button:hover {
-    background-color: #9e4d94;
-}
-
-/* Snow Animation */
-body::before, header::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    background-image: url('https://www.transparenttextures.com/patterns/snow.png');
-    animation: snowfall 10s linear infinite;
-    opacity: 0.5;
-    z-index: -1;
-}
-
-
-/* Updated Snow Animation */
-header::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    background-image: url('https://www.transparenttextures.com/patterns/snow.png');
-    animation: snowfall 10s linear infinite;
-    opacity: 0.5;
-    z-index: -1;
-}
+    background-color: #007acc;
+    color: #fff;
+  }
+  
