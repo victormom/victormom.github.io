@@ -1,8 +1,7 @@
-import QRCode from 'https://cdn.jsdelivr.net/npm/qrcode/lib/index.js';
+// Firebase configuration
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js";
 import { getDatabase, ref, push } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-database.js";
 
-// Firebase configuration
 const firebaseConfig = {
     apiKey: "AIzaSyBnyj_N8_wFTzuTon3nB6ZexQuVHsKZpbU",
     authDomain: "registroasistencia-69bac.firebaseapp.com",
@@ -30,7 +29,7 @@ let familySize = 0;
 
 async function generateQRCode(data, canvas) {
     try {
-        await QRCode.toCanvas(canvas, JSON.stringify(data), { width: 256 });
+        QRCode.toCanvas(canvas, JSON.stringify(data), { width: 256 });
     } catch (error) {
         console.error('Error generating QR code:', error);
     }
