@@ -1,7 +1,4 @@
 // Firebase configuration
-import { initializeApp } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js";
-import { getDatabase, ref, push } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-database.js";
-
 const firebaseConfig = {
     apiKey: "AIzaSyBnyj_N8_wFTzuTon3nB6ZexQuVHsKZpbU",
     authDomain: "registroasistencia-69bac.firebaseapp.com",
@@ -13,8 +10,9 @@ const firebaseConfig = {
     measurementId: "G-88SRC36F6N"
 };
 
-const app = initializeApp(firebaseConfig);
-const database = getDatabase(app);
+// Initialize Firebase
+const app = firebase.initializeApp(firebaseConfig);
+const database = firebase.database();
 
 const familyForm = document.getElementById('familyForm');
 const setGuestsButton = document.getElementById('setGuests');
@@ -82,8 +80,10 @@ guestsForm.addEventListener('submit', async (e) => {
         guests: guestsData
     };
 
-    const familyRef = ref(database, 'families');
-    const newFamilyRef = await push(familyRef, familyData);
+    const familyRef = database.ref('families');
+    const newFamilyRef = familyRef.push();
+
+    newFamilyRef.set(familyData);
 
     qrCanvasContainer.innerHTML = '';
 
