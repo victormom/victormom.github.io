@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Asistencia - Boda</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Confirmar Asistencia a la Boda</h1>
+        <form id="attendanceForm">
+            <label for="name">Nombre Completo:</label>
+            <input type="text" id="name" name="name" placeholder="Ingresa tu nombre completo" required>
+
+            <label for="familySize">Número de integrantes de tu familia:</label>
+            <input type="number" id="familySize" name="familySize" placeholder="Número de personas" required min="1">
+
+            <button type="submit">Confirmar Asistencia</button>
+        </form>
+        <div id="qrMessage" class="message" style="display: none;">
+            ¡Gracias por confirmar tu asistencia! Tu código QR ha sido enviado por WhatsApp.
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
