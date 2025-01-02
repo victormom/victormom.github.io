@@ -1,48 +1,41 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f8f9fa;
+    background-color: #f9f9f9;
     margin: 0;
     padding: 0;
 }
 .container {
     max-width: 800px;
     margin: 50px auto;
-    background: #fff;
+    background: white;
     padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
-h1 {
+h1, h2 {
     text-align: center;
-    color: #333;
-}
-form {
-    display: flex;
-    flex-direction: column;
 }
 label {
-    margin-top: 10px;
     font-weight: bold;
+    margin-top: 10px;
 }
-input, button {
-    margin-top: 5px;
+input, select, button {
+    width: 100%;
     padding: 10px;
+    margin-top: 5px;
     font-size: 16px;
-    border: 1px solid #ccc;
+    border: 1px solid #ddd;
     border-radius: 4px;
 }
 button {
     background-color: #007bff;
     color: white;
+    border: none;
     cursor: pointer;
 }
 button:hover {
     background-color: #0056b3;
 }
-.message {
-    margin-top: 20px;
-    padding: 15px;
-    border: 1px solid #007bff;
-    background-color: #e9f5ff;
-    border-radius: 4px;
+#qrCanvasContainer canvas {
+    margin: 10px;
 }

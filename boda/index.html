@@ -3,26 +3,144 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro de Asistencia - Boda</title>
+    <title>Registro de Invitados - Boda</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <h1>Confirmar Asistencia a la Boda</h1>
-        <form id="attendanceForm">
-            <label for="name">Nombre Completo:</label>
-            <input type="text" id="name" name="name" placeholder="Ingresa tu nombre completo" required>
+        <h1>Registro de Invitados</h1>
+        <form id="familyForm">
+            <label for="familyName">Apellidos de la Familia:</label>
+            <input type="text" id="familyName" name="familyName" placeholder="Ejemplo: Pérez Santiago" required>
 
-            <label for="familySize">Número de integrantes de tu familia:</label>
+            <label for="familySize">Número de Integrantes:</label>
             <input type="number" id="familySize" name="familySize" placeholder="Número de personas" required min="1">
+            <p>Las mesas serán de 10 personas. Si el número supera 10, se asignará otra mesa compartida. ¿Están de acuerdo en compartir mesa si el número es menor? (Sí/No)</p>
 
-            <button type="submit">Confirmar Asistencia</button>
+            <label for="agreeSharedTable">¿Compartir mesa si es necesario?</label>
+            <select id="agreeSharedTable" name="agreeSharedTable" required>
+                <option value="">Seleccionar</option>
+                <option value="Sí">Sí</option>
+                <option value="No">No</option>
+            </select>
+
+            <button type="button" id="setGuests">Confirmar Integrantes</button>
         </form>
-        <div id="qrMessage" class="message" style="display: none;">
-            ¡Gracias por confirmar tu asistencia! Tu código QR ha sido enviado por WhatsApp.
+
+        <div id="guestsSection" style="display: none;">
+            <h2>Detalles de los Integrantes</h2>
+            <form id="guestsForm">
+                <div id="guestsInputs"></div>
+                <label for="phoneNumber">Número de Teléfono para Enviar los Códigos QR:</label>
+                <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="Ejemplo: 5551234567" required>
+                <button type="submit">Generar Códigos QR</button>
+            </form>
+        </div>
+
+        <div id="qrSection" style="display: none;">
+            <h2>Códigos QR Generados</h2>
+            <div id="qrCanvasContainer"></div>
         </div>
     </div>
 
-    <script type="module" src="script.js"></script>
+    <script type="module">
+        import QRCode from 'https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js';
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js";
+        import { getDatabase, ref, push } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-database.js";
+
+        // Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyBnyj_N8_wFTzuTon3nB6ZexQuVHsKZpbU",
+            authDomain: "registroasistencia-69bac.firebaseapp.com",
+            databaseURL: "https://registroasistencia-69bac-default-rtdb.firebaseio.com",
+            projectId: "registroasistencia-69bac",
+            storageBucket: "registroasistencia-69bac.firebasestorage.app",
+            messagingSenderId: "803731994814",
+            appId: "1:803731994814:web:97a796c82a48ad8f8186ef",
+            measurementId: "G-88SRC36F6N"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const database = getDatabase(app);
+
+        const familyForm = document.getElementById('familyForm');
+        const setGuestsButton = document.getElementById('setGuests');
+        const guestsSection = document.getElementById('guestsSection');
+        const guestsInputs = document.getElementById('guestsInputs');
+        const guestsForm = document.getElementById('guestsForm');
+        const qrSection = document.getElementById('qrSection');
+        const qrCanvasContainer = document.getElementById('qrCanvasContainer');
+
+        let familyName = '';
+        let familySize = 0;
+
+        setGuestsButton.addEventListener('click', () => {
+            familyName = document.getElementById('familyName').value;
+            familySize = parseInt(document.getElementById('familySize').value);
+
+            if (familyName && familySize > 0) {
+                guestsInputs.innerHTML = '';
+
+                for (let i = 0; i < familySize; i++) {
+                    guestsInputs.innerHTML += `
+                        <div>
+                            <label>Nombre y Apellido del Invitado ${i + 1}:</label>
+                            <input type="text" name="guestName${i}" placeholder="Ejemplo: Manuel Santes" required>
+
+                            <label>Edad del Invitado ${i + 1}:</label>
+                            <input type="number" name="guestAge${i}" placeholder="Edad" required>
+                        </div>
+                    `;
+                }
+
+                guestsSection.style.display = 'block';
+            }
+        });
+
+        guestsForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const phoneNumber = document.getElementById('phoneNumber').value;
+            const guestsData = [];
+
+            for (let i = 0; i < familySize; i++) {
+                const guestName = e.target[`guestName${i}`].value;
+                const guestAge = e.target[`guestAge${i}`].value;
+
+                guestsData.push({
+                    name: guestName,
+                    age: guestAge
+                });
+            }
+
+            const familyData = {
+                familyName,
+                familySize,
+                phoneNumber,
+                guests: guestsData
+            };
+
+            const familyRef = ref(database, 'families');
+            const newFamilyRef = await push(familyRef, familyData);
+
+            // Generar QR para cada invitado
+            qrCanvasContainer.innerHTML = '';
+
+            for (const guest of guestsData) {
+                const qrCanvas = document.createElement('canvas');
+                const qrData = {
+                    familyName,
+                    guestName: guest.name,
+                    guestAge: guest.age,
+                    familyId: newFamilyRef.key
+                };
+
+                await QRCode.toCanvas(qrCanvas, JSON.stringify(qrData));
+                qrCanvasContainer.appendChild(qrCanvas);
+            }
+
+            qrSection.style.display = 'block';
+        });
+    </script>
 </body>
 </html>
