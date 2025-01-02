@@ -1,4 +1,4 @@
-import { toCanvas } from 'https://cdn.jsdelivr.net/npm/qrcode-esm/browser.js';
+import QRCode from 'https://cdn.jsdelivr.net/npm/qrcode/lib/index.js';
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js";
 import { getDatabase, ref, push } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-database.js";
 
@@ -28,15 +28,12 @@ const qrCanvasContainer = document.getElementById('qrCanvasContainer');
 let familyName = '';
 let familySize = 0;
 
-// Crear imagen QR con imagen prediseñada
-async function createQRCode(data, canvas) {
-    await toCanvas(canvas, JSON.stringify(data), { width: 200 });
-    const ctx = canvas.getContext('2d');
-    const image = new Image();
-    image.src = 'your-predefined-image.png'; // Ruta de la imagen prediseñada
-    image.onload = () => {
-        ctx.drawImage(image, 50, 50, 100, 100); // Ajustar posición y tamaño
-    };
+async function generateQRCode(data, canvas) {
+    try {
+        await QRCode.toCanvas(canvas, JSON.stringify(data), { width: 256 });
+    } catch (error) {
+        console.error('Error generating QR code:', error);
+    }
 }
 
 setGuestsButton.addEventListener('click', () => {
@@ -44,22 +41,20 @@ setGuestsButton.addEventListener('click', () => {
     familySize = parseInt(document.getElementById('familySize').value);
 
     if (familyName && familySize > 0) {
-        guestsInputs.innerHTML = ''; // Limpiar inputs anteriores
+        guestsInputs.innerHTML = '';
 
-        // Crear campos dinámicamente
         for (let i = 0; i < familySize; i++) {
             guestsInputs.innerHTML += `
                 <div>
                     <label>Nombre y Apellido del Invitado ${i + 1}:</label>
                     <input type="text" name="guestName${i}" placeholder="Ejemplo: Manuel Santes" required>
-
                     <label>Edad del Invitado ${i + 1}:</label>
                     <input type="number" name="guestAge${i}" placeholder="Edad" required>
                 </div>
             `;
         }
 
-        guestsSection.style.display = 'block'; // Mostrar la siguiente sección
+        guestsSection.style.display = 'block';
     } else {
         alert('Por favor completa todos los campos.');
     }
@@ -91,7 +86,6 @@ guestsForm.addEventListener('submit', async (e) => {
     const familyRef = ref(database, 'families');
     const newFamilyRef = await push(familyRef, familyData);
 
-    // Generar QR para cada invitado
     qrCanvasContainer.innerHTML = '';
 
     for (const guest of guestsData) {
@@ -103,7 +97,7 @@ guestsForm.addEventListener('submit', async (e) => {
             familyId: newFamilyRef.key
         };
 
-        await createQRCode(qrData, qrCanvas);
+        await generateQRCode(qrData, qrCanvas);
         qrCanvasContainer.appendChild(qrCanvas);
     }
 
