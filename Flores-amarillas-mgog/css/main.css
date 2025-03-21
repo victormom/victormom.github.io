@@ -120,24 +120,7 @@ body {
 
 }
 
-
 .flower {
-    width: 50px;
-    height: 70px;
-    background: red;
-    position: relative;
-    clip-path: polygon(50% 0%, 80% 30%, 100% 70%, 50% 100%, 0% 70%, 20% 30%);
-}
-
-.stem {
-    width: 10px;
-    height: 100px;
-    background: green;
-    position: absolute;
-    top: 70px;
-    left: 20px;
-}
-
   position: absolute;
   bottom: 10vmin;
   transform-origin: bottom center;
