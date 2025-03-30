@@ -1,82 +1,77 @@
-/* Reset básico */
-* {
+body {
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
-    color: #333;
+    background-color: #f8f8f8;
+}
+
+header {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
-    min-height: 100vh;
-  }
-  
-  header {
-    text-align: center;
-    margin: 20px 0;
-  }
-  
-  header h1 {
-    font-size: 2.5rem;
-    color: #007acc;
-  }
-  
-  header p {
-    font-size: 1.2rem;
-    color: #555;
-  }
-  
-  main {
-    width: 90%;
-    max-width: 800px;
-  }
-  
-  .projects {
-    margin-top: 30px;
-  }
-  
-  .project, .coming-soon {
-    background-color: #fff;
-    margin-bottom: 20px;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-  
-  .project h3, .coming-soon h3 {
-    margin-bottom: 10px;
-    font-size: 1.5rem;
-  }
-  
-  .project p {
-    font-size: 1rem;
-    color: #555;
-  }
-  
-  .btn {
-    display: inline-block;
-    margin-top: 10px;
     padding: 10px 20px;
-    font-size: 1rem;
-    background-color: #007acc;
-    color: #fff;
+    background-color: #eeeeee;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
     text-decoration: none;
-    border-radius: 5px;
-  }
-  
-  .btn:hover {
-    background-color: #005f99;
-  }
-  
-  footer {
-    margin-top: auto;
+    color: black;
+    font-weight: bold;
+}
+
+.hero {
+    background: url('background.jpg') no-repeat center center/cover;
+    background-color: #FFD700;
     text-align: center;
-    padding: 10px;
-    background-color: #007acc;
-    color: #fff;
-  }
-  
+    padding: 50px 20px;
+}
+
+.hero img {
+    max-width: 300px;
+}
+
+.hero h2 {
+    font-size: 48px;
+    color: #004AAD;
+}
+
+.hero .btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: red;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 5px;
+}
+
+/* Imagen de perfil en forma circular */
+.profile-img {
+    display: block;
+    margin: 20px auto;
+    width: 200px;  /* Ajusta el tamaño de la imagen */
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #222;
+    color: white;
+    margin-top: 20px;
+}
