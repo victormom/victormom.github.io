@@ -62,10 +62,52 @@ nav ul li a {
 .profile-img {
     display: block;
     margin: 20px auto;
-    width: 200px;  /* Ajusta el tamaño de la imagen */
+    width: 200px;
     height: 200px;
     border-radius: 50%;
     object-fit: cover;
+}
+
+/* Sección de Proyectos */
+.projects-section {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto auto;
+    gap: 15px;
+    justify-content: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Primer proyecto (imagen más grande) */
+.project-large {
+    grid-column: span 2;
+    grid-row: span 1;
+}
+
+/* Ajuste para todas las imágenes */
+.project-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Diseño Responsivo */
+@media (max-width: 768px) {
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 footer {
