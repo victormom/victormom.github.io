@@ -58,7 +58,6 @@ nav ul li a {
     border-radius: 5px;
 }
 
-/* Imagen de perfil en forma circular */
 .profile-img {
     display: block;
     margin: 20px auto;
@@ -68,7 +67,6 @@ nav ul li a {
     object-fit: cover;
 }
 
-/* Sección de Proyectos */
 .projects-section {
     padding: 50px 20px;
     text-align: center;
@@ -76,7 +74,7 @@ nav ul li a {
 
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     grid-template-rows: auto auto;
     gap: 15px;
     justify-content: center;
@@ -84,20 +82,29 @@ nav ul li a {
     margin: 0 auto;
 }
 
-/* Primer proyecto (imagen más grande) */
-.project-large {
-    grid-column: span 2;
-    grid-row: span 1;
+.project-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
 }
 
-/* Ajuste para todas las imágenes */
 .project-item img {
     width: 100%;
-    height: 100%;
+    height: auto;
     object-fit: cover;
+    display: block;
 }
 
-/* Diseño Responsivo */
+@media (min-width: 768px) {
+    .projects-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .project-large {
+        grid-column: span 2;
+    }
+}
+
 @media (max-width: 768px) {
     .projects-grid {
         grid-template-columns: repeat(2, 1fr);
