@@ -1,259 +1,715 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Victor Olmedo - Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Victor Olmedo — Dev & Trainer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <!-- Navegación estilo Pokémon -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="logo-section">
-                <img src="img/perfil.png" alt="Victor Olmedo" class="avatar">
-                <div class="logo">Victor Olmedo</div>
-            </div>
-            <ul class="nav-menu">
-                <li><a href="#home" class="nav-link">
-                    <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
-                        <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
-                    </svg>
-                    Home
-                </a></li>
-                <li><a href="#about" class="nav-link">
-                    <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
-                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/>
-                    </svg>
-                    Sobre mí
-                </a></li>
-                <li><a href="#projects" class="nav-link">
-                    <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
-                        <path d="M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-1 9H9V9h10v2zm-4 4H9v-2h6v2zm4-8H9V5h10v2z"/>
-                    </svg>
-                    Proyectos
-                </a></li>
-                <li><a href="#contact" class="nav-link">
-                    <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
-                        <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
-                    </svg>
-                    Contacto
-                </a></li>
-            </ul>
-        </div>
-    </nav>
 
-    <!-- Hero Section estilo Pokémon -->
-    <section id="home" class="hero">
-        <div class="hero-bg">
-            <div class="pokeball pokeball-1"></div>
-            <div class="pokeball pokeball-2"></div>
-            <div class="pokeball pokeball-3"></div>
-        </div>
-        <div class="hero-content">
-            <div class="hero-badge">
-                <img src="img/perfil.png" alt="Victor" class="hero-avatar">
-            </div>
-            <h1 class="hero-title">¡Bienvenido a mi Portafolio!</h1>
-            <p class="hero-subtitle">Desarrollador Full Stack | Creador de Experiencias Digitales</p>
-            <a href="#projects" class="btn-primary">
-                <span>Explorar Proyectos</span>
-                <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
-                    <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/>
-                </svg>
-            </a>
-        </div>
-    </section>
+<!-- NAV -->
+<nav>
+  <a href="#hero" class="nav-logo">// V.OLM</a>
+  <ul class="nav-links">
+    <li><a href="#about">about</a></li>
+    <li><a href="#stack">stack</a></li>
+    <li><a href="#projects">proyectos</a></li>
+    <li><a href="#pokedex">pokédex</a></li>
+    <li><a href="#contact">contacto</a></li>
+  </ul>
+</nav>
 
-    <!-- About Section -->
-    <section id="about" class="about-section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Sobre Mí</h2>
-                <div class="section-underline"></div>
-            </div>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>Soy un desarrollador apasionado por crear soluciones web innovadoras y funcionales. Me especializo en tecnologías modernas y siempre estoy aprendiendo nuevas herramientas para mejorar mis habilidades.</p>
-                    <div class="skills">
-                        <div class="skill-tag">
-                            <span class="skill-icon">⚡</span>
-                            <span>JavaScript</span>
-                        </div>
-                        <div class="skill-tag">
-                            <span class="skill-icon">⚛️</span>
-                            <span>React</span>
-                        </div>
-                        <div class="skill-tag">
-                            <span class="skill-icon">🚀</span>
-                            <span>Node.js</span>
-                        </div>
-                        <div class="skill-tag">
-                            <span class="skill-icon">🎨</span>
-                            <span>HTML/CSS</span>
-                        </div>
-                        <div class="skill-tag">
-                            <span class="skill-icon">📦</span>
-                            <span>Git</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="projects-section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Mis Proyectos</h2>
-                <div class="section-underline"></div>
-            </div>
-            <div class="projects-grid">
-                
-                <!-- Proyecto 1: Todo App PHP MVC -->
-<div class="project-card">
-    <div class="project-image-wrapper">
-        <img src="img/proyect1.png" alt="Todo App PHP MVC" class="project-img">
-        <div class="project-badge">CRUD PHP</div>
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg-grid"></div>
+  <div class="hero-bg-circle"></div>
+  <div class="hero-content">
+    <div class="hero-left">
+      <div class="hero-badge">
+        <div class="badge-dot"></div>
+        Disponible para proyectos
+      </div>
+      <h1 class="hero-name">VICTOR<br>OLMEDO</h1>
+      <p class="hero-title">Full Stack Developer &amp; Pokémon Trainer</p>
+      <p class="hero-desc">
+        Construyo soluciones reales con PHP, Laravel y Linux. Apasionado por el bajo nivel con Rust, la línea de comandos, y coleccionar Pokémon. Dev de día, entrenador de noche.
+      </p>
+      <div class="hero-ctas">
+        <a href="#projects" class="btn-primary">VER PROYECTOS</a>
+        <a href="#contact" class="btn-outline">Contacto →</a>
+      </div>
     </div>
-    <div class="project-content">
-        <h3 class="project-title">📝 Todo App - CRUD con PHP</h3>
-        <p class="project-description">Aplicación web para gestión de tareas desarrollada con PHP puro y MySQL, implementando arquitectura MVC (Modelo-Vista-Controlador) para una estructura limpia y escalable.</p>
-        
-        <div class="tech-stack">
-            <span class="tech-label">🛠️ Tecnologías Backend:</span>
-            <div class="project-tags">
-                <span class="tag">PHP 7+</span>
-                <span class="tag">MySQL</span>
-                <span class="tag">MVC Pattern</span>
-                <span class="tag">PDO</span>
-                <span class="tag">OOP</span>
-            </div>
+
+    <!-- TRAINER CARD -->
+    <div class="trainer-card">
+      <div class="card-header">
+        <div class="trainer-avatar">🧑‍💻</div>
+        <div class="card-title-block">
+          <div class="card-label">TRAINER CARD</div>
+          <div class="card-name">VICTOR OLMEDO</div>
+          <div class="team-badge">
+            <span class="team-lightning">⚡</span>
+            TEAM INSTINCT
+          </div>
         </div>
-        
-        <div class="project-features">
-            <p class="feature-item">🏗️ Arquitectura MVC implementada desde cero</p>
-            <p class="feature-item">📊 CRUD completo (Create, Read, Update, Delete)</p>
-            <p class="feature-item">🔐 Conexión segura con PDO preparado</p>
-            <p class="feature-item">🎯 PHP puro sin frameworks externos</p>
-            <p class="feature-item">💾 Base de datos MySQL normalizada</p>
-            <p class="feature-item">🔄 Separación de lógica, datos y presentación</p>
+      </div>
+
+      <div class="card-stats">
+        <div class="stat-item">
+          <div class="stat-label">Trainer ID</div>
+          <div class="stat-value">V1CT0R-404</div>
         </div>
-        
-        <div class="tech-stack" style="margin-top: 1rem;">
-            <span class="tech-label">📐 Estructura del Proyecto:</span>
-            <div class="project-tags">
-                <span class="tag">Model (Datos)</span>
-                <span class="tag">View (UI)</span>
-                <span class="tag">Controller (Lógica)</span>
-            </div>
+        <div class="stat-item">
+          <div class="stat-label">Gen Favorita</div>
+          <div class="stat-value">GEN I</div>
         </div>
-        
-        <a href="https://todo-app.gt.tc/" target="_blank" class="project-link">
-            Ver Proyecto en Vivo
-            <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
-                <path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/>
-            </svg>
-        </a>
+        <div class="stat-item">
+          <div class="stat-label">Proyectos</div>
+          <div class="stat-value">4 ACTIVOS</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-label">OS</div>
+          <div class="stat-value small">UBUNTU LINUX</div>
+        </div>
+      </div>
+
+      <div class="card-pokemon">
+        <div class="poke-sprite">🔥</div>
+        <div class="poke-info">
+          <div class="poke-name">#006 — CHARIZARD</div>
+          <div class="poke-type">FIRE / FLYING — ACE PARTNER</div>
+          <div class="hp-bar"><div class="hp-fill"></div></div>
+        </div>
+      </div>
     </div>
+  </div>
+</section>
+
+<!-- SOBRE MÍ -->
+<div style="max-width:1100px;margin:0 auto;padding:0 2rem;">
+  <section id="about" class="section" style="padding-left:0;padding-right:0;">
+    <div class="section-header reveal">
+      <div class="section-eyebrow">// SOBRE MÍ</div>
+      <h2 class="section-title">Dev con alma de<br>entrenador</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <p>
+          Soy <span class="highlight">Victor Olmedo</span>, desarrollador full stack con base fuerte en PHP y ecosistema Laravel. Me gusta construir cosas que funcionen de verdad — desde sistemas de gestión hasta APIs y apps de punto de venta.
+        </p>
+        <p>
+          Mi entorno es <span class="highlight">Linux</span> (Ubuntu), mi editor favorito es la terminal, y tengo una obsesión sana por <span class="highlight">Rust</span> — me fascina el control que da sobre la memoria y el rendimiento, aunque PHP es donde más he batalleado y ganado.
+        </p>
+        <p>
+          Fuera del código, soy <span class="highlight">Entrenador Team Instinct</span> en Pokémon GO, coleccionista de Gen I, y creo firmemente que Charizard es el mejor starter evolutivo.
+        </p>
+      </div>
+      <div class="timeline reveal">
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-year">2020 — inicio</div>
+          <div class="timeline-role">Primeros pasos con PHP</div>
+          <div class="timeline-desc">HTML, CSS, JavaScript y PHP puro. Mis primeros CRUDs y el amor por el backend.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-year">2022 — crecimiento</div>
+          <div class="timeline-role">Laravel y MySQL</div>
+          <div class="timeline-desc">Arquitectura MVC, Eloquent, APIs REST. Primer proyecto real: sistema de agenda.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-year">2023 — especialización</div>
+          <div class="timeline-role">Full Stack + POS</div>
+          <div class="timeline-desc">Taqueria Vos: app de punto de venta completa. Sistema de licencias con Laravel.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-year">2024/25 — exploración</div>
+          <div class="timeline-role">Rust &amp; sistemas</div>
+          <div class="timeline-desc">Curiosidad por bajo nivel, memoria, rendimiento. Linux como entorno de trabajo total.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STACK -->
+  <section id="stack" class="section" style="padding-left:0;padding-right:0;border-top:1px solid rgba(255,255,255,0.06);">
+    <div class="section-header reveal">
+      <div class="section-eyebrow">// TECNOLOGÍAS</div>
+      <h2 class="section-title">Mi Stack</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="stack-grid reveal">
+      <div class="stack-item love">
+        <span class="stack-icon">🦀</span>
+        <div class="stack-name">Rust</div>
+        <div class="stack-level">en aprendizaje ♥</div>
+      </div>
+      <div class="stack-item php-item">
+        <span class="stack-icon">🐘</span>
+        <div class="stack-name">PHP</div>
+        <div class="stack-level">avanzado</div>
+      </div>
+      <div class="stack-item laravel-item">
+        <span class="stack-icon">⚡</span>
+        <div class="stack-name">Laravel</div>
+        <div class="stack-level">avanzado</div>
+      </div>
+      <div class="stack-item linux-item">
+        <span class="stack-icon">🐧</span>
+        <div class="stack-name">Linux</div>
+        <div class="stack-level">daily driver</div>
+      </div>
+      <div class="stack-item js-item">
+        <span class="stack-icon">📜</span>
+        <div class="stack-name">JavaScript</div>
+        <div class="stack-level">intermedio</div>
+      </div>
+      <div class="stack-item mysql-item">
+        <span class="stack-icon">🗄️</span>
+        <div class="stack-name">MySQL</div>
+        <div class="stack-level">avanzado</div>
+      </div>
+      <div class="stack-item git-item">
+        <span class="stack-icon">🌿</span>
+        <div class="stack-name">Git</div>
+        <div class="stack-level">intermedio</div>
+      </div>
+      <div class="stack-item css-item">
+        <span class="stack-icon">🎨</span>
+        <div class="stack-name">CSS</div>
+        <div class="stack-level">intermedio</div>
+      </div>
+      <div class="stack-item">
+        <span class="stack-icon">🖥️</span>
+        <div class="stack-name">Apache</div>
+        <div class="stack-level">intermedio</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROYECTOS -->
+  <section id="projects" class="section" style="padding-left:0;padding-right:0;border-top:1px solid rgba(255,255,255,0.06);">
+    <div class="section-header reveal">
+      <div class="section-eyebrow">// PROYECTOS</div>
+      <h2 class="section-title">Lo que he construido</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="projects-grid">
+
+      <div class="project-card reveal">
+        <div class="project-thumb todo">
+          📝
+          <div class="poke-deco">⚡</div>
+        </div>
+        <div class="project-body">
+          <div class="project-tags">
+            <span class="tag">PHP</span>
+            <span class="tag">MySQL</span>
+            <span class="tag blue">MVC</span>
+          </div>
+          <div class="project-name">TODO APP — PHP MVC</div>
+          <p class="project-desc">Gestión de tareas con PHP puro y MySQL. Arquitectura MVC desde cero, CRUD completo con PDO, sin frameworks externos.</p>
+          <a href="http://localhost/todo-app" class="project-link">→ Ver local</a>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="project-thumb agenda">
+          📅
+          <div class="poke-deco">🌿</div>
+        </div>
+        <div class="project-body">
+          <div class="project-tags">
+            <span class="tag red">Laravel</span>
+            <span class="tag">PHP</span>
+            <span class="tag green">MySQL</span>
+          </div>
+          <div class="project-name">AGENDA CONTACTOS</div>
+          <p class="project-desc">Sistema de gestión de contactos construido con Laravel 12. CRUD completo, relaciones Eloquent y UI limpia.</p>
+          <a href="http://agenda.local" class="project-link">→ agenda.local</a>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="project-thumb taqueria">
+          🌮
+          <div class="poke-deco">🔥</div>
+        </div>
+        <div class="project-body">
+          <div class="project-tags">
+            <span class="tag">PHP</span>
+            <span class="tag red">POS</span>
+            <span class="tag">MySQL</span>
+          </div>
+          <div class="project-name">TAQUERIA VOS</div>
+          <p class="project-desc">Sistema de punto de venta para taquería. Gestión de pedidos, inventario y caja. Proyecto real en producción local.</p>
+          <a href="http://taqueriavos.local" class="project-link">→ taqueriavos.local</a>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="project-thumb licenses">
+          🔑
+          <div class="poke-deco">💜</div>
+        </div>
+        <div class="project-body">
+          <div class="project-tags">
+            <span class="tag red">Laravel</span>
+            <span class="tag purple">Licencias</span>
+            <span class="tag">API</span>
+          </div>
+          <div class="project-name">TAQUEROS LICENSES</div>
+          <p class="project-desc">Sistema de gestión y validación de licencias de software para el ecosistema Taqueros. Laravel con API de validación.</p>
+          <a href="http://licenses.local" class="project-link">→ licenses.local</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- DATOS RANDOM — INTERACTIVO -->
+  <section id="pokedex" class="section" style="padding-left:0;padding-right:0;border-top:1px solid rgba(255,255,255,0.06);">
+    <div class="section-header reveal">
+      <div class="section-eyebrow">// DATOS RANDOM</div>
+      <h2 class="section-title">Más allá del código</h2>
+      <div class="section-line"></div>
+      <p style="margin-top:1rem;font-size:14px;color:var(--gray2);font-family:var(--mono);">La persona detrás del teclado — explora con los tabs</p>
+    </div>
+
+    <!-- TABS NAV -->
+    <div class="rd-tabs reveal" id="rdTabs">
+      <button class="rd-tab active" data-tab="pokemon">⚡ Pokémon</button>
+      <button class="rd-tab" data-tab="libros">📚 Libros</button>
+      <button class="rd-tab" data-tab="musica">🎵 Música</button>
+      <button class="rd-tab" data-tab="juegos">🎮 Juegos</button>
+      <button class="rd-tab" data-tab="futbol">⚽ Fútbol</button>
+      <button class="rd-tab" data-tab="mundo">🌍 Mundo</button>
+    </div>
+
+    <!-- TAB: POKÉMON -->
+    <div class="rd-panel active" id="tab-pokemon">
+      <div class="pokedex-container reveal">
+        <div class="pokedex-screen">
+          <div class="screen-header">
+            <div class="screen-dot"></div>
+            <div class="screen-title">TRAINER DATA — VICTOR OLMEDO</div>
+          </div>
+          <div class="data-grid">
+            <div class="data-entry"><div class="data-key">TRAINER ID (GO)</div><div class="data-val big">V1CT0R-404</div></div>
+            <div class="data-entry"><div class="data-key">EQUIPO</div><div class="data-val big">⚡ TEAM INSTINCT</div></div>
+            <div class="data-entry"><div class="data-key">STARTER DE CORAZÓN</div><div class="data-val">🔥 Charmander → Charmeleon → Charizard</div></div>
+            <div class="data-entry"><div class="data-key">GEN FAVORITA</div><div class="data-val big">GEN I — KANTO</div></div>
+            <div class="data-entry"><div class="data-key">EQUIPO DE BATALLA</div><div class="data-val">🔥 Charizard / ⚡ Raichu / 🌊 Blastoise</div></div>
+            <div class="data-entry"><div class="data-key">JUEGOS ACTIVOS</div><div class="data-val">📱 Pokémon GO + Pokémon Champions</div></div>
+            <div class="data-entry"><div class="data-key">POKÉMON SHINY</div><div class="data-val">Buscando... siempre buscando ✨</div></div>
+            <div class="data-entry"><div class="data-key">FUN FACT</div><div class="data-val">Mi localhost tiene más proyectos que Pokémon atrapados</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB: LIBROS -->
+    <div class="rd-panel" id="tab-libros">
+      <p style="font-family:var(--mono);font-size:12px;color:var(--gray2);margin-bottom:2rem;">Haz clic en un libro para abrirlo y leer mi opinión</p>
+
+      <div class="bookshelf-scene">
+
+        <!-- Libro 1 -->
+        <div class="bk" id="bk1">
+          <div class="bk-closed" onclick="toggleBook('bk1')">
+            <div class="bk-spine" style="background:#0d3b8c;">
+              <span>1984</span>
+            </div>
+            <div class="bk-front" style="background:linear-gradient(160deg,#1a237e,#283593);">
+              <div class="bk-front-emoji">👁️</div>
+              <div class="bk-front-title">1984</div>
+              <div class="bk-front-author">Orwell</div>
+              <div class="bk-click-hint">clic para abrir</div>
+            </div>
+          </div>
+          <div class="bk-open-content">
+            <div class="bk-left-page">
+              <div class="bk-page-deco">👁️</div>
+              <div class="bk-page-lines">
+                <div class="bk-line long"></div><div class="bk-line med"></div>
+                <div class="bk-line full"></div><div class="bk-line full"></div>
+                <div class="bk-line short"></div>
+              </div>
+            </div>
+            <div class="bk-right-page">
+              <div class="bk-page-title">1984</div>
+              <div class="bk-page-author">George Orwell</div>
+              <div class="bk-page-tag">🏛️ Distopía</div>
+              <p class="bk-page-note">El Gran Hermano te observa. Un clásico que te hace cuestionar todo — control, libertad, lenguaje. Lo leí y no pude ver las noticias igual.</p>
+              <div class="bk-page-stars">★★★★★</div>
+              <button class="bk-close-btn" onclick="toggleBook('bk1')">cerrar ✕</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Libro 2 -->
+        <div class="bk" id="bk2">
+          <div class="bk-closed" onclick="toggleBook('bk2')">
+            <div class="bk-spine" style="background:#7b1212;">
+              <span>Rebelión</span>
+            </div>
+            <div class="bk-front" style="background:linear-gradient(160deg,#b71c1c,#c62828);">
+              <div class="bk-front-emoji">🐷</div>
+              <div class="bk-front-title">Rebelión en la Granja</div>
+              <div class="bk-front-author">Orwell</div>
+              <div class="bk-click-hint">clic para abrir</div>
+            </div>
+          </div>
+          <div class="bk-open-content">
+            <div class="bk-left-page">
+              <div class="bk-page-deco">🐷</div>
+              <div class="bk-page-lines">
+                <div class="bk-line long"></div><div class="bk-line med"></div>
+                <div class="bk-line full"></div><div class="bk-line full"></div>
+                <div class="bk-line short"></div>
+              </div>
+            </div>
+            <div class="bk-right-page">
+              <div class="bk-page-title">Rebelión en la Granja</div>
+              <div class="bk-page-author">George Orwell</div>
+              <div class="bk-page-tag">🐾 Fábula política</div>
+              <p class="bk-page-note">Todos los animales son iguales, pero algunos son más iguales. Orwell en modo fábula: simple, corto, y te deja pensando días.</p>
+              <div class="bk-page-stars">★★★★★</div>
+              <button class="bk-close-btn" onclick="toggleBook('bk2')">cerrar ✕</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Libro 3 -->
+        <div class="bk" id="bk3">
+          <div class="bk-closed" onclick="toggleBook('bk3')">
+            <div class="bk-spine" style="background:#1b5e20;">
+              <span>Canterville</span>
+            </div>
+            <div class="bk-front" style="background:linear-gradient(160deg,#2e7d32,#388e3c);">
+              <div class="bk-front-emoji">👻</div>
+              <div class="bk-front-title">El Fantasma de Canterville</div>
+              <div class="bk-front-author">Wilde</div>
+              <div class="bk-click-hint">clic para abrir</div>
+            </div>
+          </div>
+          <div class="bk-open-content">
+            <div class="bk-left-page">
+              <div class="bk-page-deco">👻</div>
+              <div class="bk-page-lines">
+                <div class="bk-line long"></div><div class="bk-line med"></div>
+                <div class="bk-line full"></div><div class="bk-line full"></div>
+                <div class="bk-line short"></div>
+              </div>
+            </div>
+            <div class="bk-right-page">
+              <div class="bk-page-title">El Fantasma de Canterville</div>
+              <div class="bk-page-author">Oscar Wilde</div>
+              <div class="bk-page-tag">👻 Humor / Fantasía</div>
+              <p class="bk-page-note">Un fantasma que no da miedo y una familia que no se inmuta. Wilde tiene un humor elegante que te hace reír sin darte cuenta. Ligero y brillante.</p>
+              <div class="bk-page-stars">★★★★☆</div>
+              <button class="bk-close-btn" onclick="toggleBook('bk3')">cerrar ✕</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Libro 4 -->
+        <div class="bk" id="bk4">
+          <div class="bk-closed" onclick="toggleBook('bk4')">
+            <div class="bk-spine" style="background:#4a148c;">
+              <span>Dos Crímenes</span>
+            </div>
+            <div class="bk-front" style="background:linear-gradient(160deg,#6a1b9a,#7b1fa2);">
+              <div class="bk-front-emoji">🔪</div>
+              <div class="bk-front-title">Dos Crímenes</div>
+              <div class="bk-front-author">Ibargüengoitia</div>
+              <div class="bk-click-hint">clic para abrir</div>
+            </div>
+          </div>
+          <div class="bk-open-content">
+            <div class="bk-left-page">
+              <div class="bk-page-deco">🔪</div>
+              <div class="bk-page-lines">
+                <div class="bk-line long"></div><div class="bk-line med"></div>
+                <div class="bk-line full"></div><div class="bk-line full"></div>
+                <div class="bk-line short"></div>
+              </div>
+            </div>
+            <div class="bk-right-page">
+              <div class="bk-page-title">Dos Crímenes</div>
+              <div class="bk-page-author">Jorge Ibargüengoitia</div>
+              <div class="bk-page-tag">🇲🇽 Novela negra mexicana</div>
+              <p class="bk-page-note">Comedia negra en su máxima expresión. Ibargüengoitia hace del crimen algo absurdamente cómico. Literatura mexicana de la buena.</p>
+              <div class="bk-page-stars">★★★★☆</div>
+              <button class="bk-close-btn" onclick="toggleBook('bk4')">cerrar ✕</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Libro 5 — POE (destacado) -->
+        <div class="bk bk-fav" id="bk5">
+          <div class="bk-closed" onclick="toggleBook('bk5')">
+            <div class="bk-spine" style="background:#1a1a2e;">
+              <span>Poe ♥</span>
+            </div>
+            <div class="bk-front" style="background:linear-gradient(160deg,#0d1117,#1a1a2e);border:2px solid #049DD9;">
+              <div class="bk-front-emoji">🪶</div>
+              <div class="bk-front-title">Edgar Allan Poe</div>
+              <div class="bk-front-author">AUTOR FAV</div>
+              <div class="bk-click-hint">clic para abrir</div>
+            </div>
+          </div>
+          <div class="bk-open-content">
+            <div class="bk-left-page" style="background:#f5f0e8;">
+              <div class="bk-page-deco">🪶</div>
+              <div class="bk-page-lines">
+                <div class="bk-line long"></div><div class="bk-line med"></div>
+                <div class="bk-line full"></div><div class="bk-line full"></div>
+                <div class="bk-line short"></div>
+              </div>
+              <div style="font-family:Georgia,serif;font-size:11px;color:#555;font-style:italic;margin-top:12px;line-height:1.6;">"Nevermore."<br>— El Cuervo</div>
+            </div>
+            <div class="bk-right-page">
+              <div class="bk-page-title" style="color:#049DD9;">Edgar Allan Poe</div>
+              <div class="bk-page-author">Mi autor favorito absoluto ★</div>
+              <div class="bk-page-tag">🖤 Terror / Misterio / Poesía</div>
+              <p class="bk-page-note">El Cuervo, El Corazón Delator, La Caída de la Casa Usher... Poe domina la atmósfera como nadie. Cada cuento es una experiencia completa. Mi autor de cabecera.</p>
+              <div class="bk-page-stars" style="color:#049DD9;">★★★★★ — AUTOR FAV</div>
+              <button class="bk-close-btn" onclick="toggleBook('bk5')">cerrar ✕</button>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /bookshelf-scene -->
+    </div>
+
+    <!-- TAB: MÚSICA -->
+    <div class="rd-panel" id="tab-musica">
+      <div class="music-player">
+        <div class="music-header">
+          <div class="music-visualizer" id="musicViz">
+            <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+          </div>
+          <div class="music-title-block">
+            <div class="music-now">TOP 5 — VICTOR'S PLAYLIST</div>
+            <div class="music-sub" id="nowPlaying">Haz clic en un artista</div>
+          </div>
+        </div>
+        <div class="music-list">
+          <div class="music-item" onclick="playArtist(this,'Santa RM','🎤','Rap / Hip-hop mexicano','El rey del rap en español. Letras que pegan diferente — poético y callejero al mismo tiempo.')">
+            <div class="music-rank">01</div>
+            <div class="music-emoji">🎤</div>
+            <div class="music-info">
+              <div class="music-artist">Santa RM</div>
+              <div class="music-genre">Rap / Hip-hop MX</div>
+            </div>
+            <div class="music-bar"><div class="music-bar-fill" style="width:98%"></div></div>
+          </div>
+          <div class="music-item" onclick="playArtist(this,'Katy Perry','🌟','Pop','Guilty pleasure level 100. Roar, Firework, Dark Horse — bangers eternos.')">
+            <div class="music-rank">02</div>
+            <div class="music-emoji">🌟</div>
+            <div class="music-info">
+              <div class="music-artist">Katy Perry</div>
+              <div class="music-genre">Pop</div>
+            </div>
+            <div class="music-bar"><div class="music-bar-fill" style="width:88%"></div></div>
+          </div>
+          <div class="music-item" onclick="playArtist(this,'Ed Sheeran','🎸','Pop / Folk','El hombre de la guitarra. Shape of You y Castle on the Hill son otro nivel de storytelling.')">
+            <div class="music-rank">03</div>
+            <div class="music-emoji">🎸</div>
+            <div class="music-info">
+              <div class="music-artist">Ed Sheeran</div>
+              <div class="music-genre">Pop / Folk</div>
+            </div>
+            <div class="music-bar"><div class="music-bar-fill" style="width:80%"></div></div>
+          </div>
+          <div class="music-item" onclick="playArtist(this,'C-Kan','🏙️','Rap / Hip-hop MX','El de Guadalajara. Rap mexicano con identidad propia — barrio, calle, historia real.')">
+            <div class="music-rank">04</div>
+            <div class="music-emoji">🏙️</div>
+            <div class="music-info">
+              <div class="music-artist">C-Kan</div>
+              <div class="music-genre">Rap / Hip-hop MX</div>
+            </div>
+            <div class="music-bar"><div class="music-bar-fill" style="width:75%"></div></div>
+          </div>
+          <div class="music-item" onclick="playArtist(this,'Morat','🌿','Pop / Indie colombiano','Colombia en modo poético. Cómo Te Atreves y No Se Va son perfectas para programar de noche.')">
+            <div class="music-rank">05</div>
+            <div class="music-emoji">🌿</div>
+            <div class="music-info">
+              <div class="music-artist">Morat</div>
+              <div class="music-genre">Pop / Indie CO</div>
+            </div>
+            <div class="music-bar"><div class="music-bar-fill" style="width:70%"></div></div>
+          </div>
+        </div>
+        <div class="music-desc-box" id="musicDescBox" style="display:none">
+          <span id="musicDescEmoji"></span>
+          <div>
+            <div class="music-desc-artist" id="musicDescArtist"></div>
+            <div class="music-desc-text" id="musicDescText"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB: JUEGOS -->
+    <div class="rd-panel" id="tab-juegos">
+      <div class="games-grid">
+        <div class="game-card featured">
+          <div class="game-icon">🔴</div>
+          <div class="game-name">Pokémon GO</div>
+          <div class="game-platform">iOS / Android</div>
+          <div class="game-desc">Mi juego principal. Team Instinct, Charizard como ace. Siempre buscando shinies.</div>
+          <div class="game-badge">MAIN GAME</div>
+        </div>
+        <div class="game-card">
+          <div class="game-icon">🏆</div>
+          <div class="game-name">Pokémon Champions</div>
+          <div class="game-platform">Móvil</div>
+          <div class="game-desc">Batallas competitivas. Estrategia pura — cada movimiento cuenta.</div>
+        </div>
+        <div class="game-card">
+          <div class="game-icon">🍄</div>
+          <div class="game-name">Mario Bros</div>
+          <div class="game-platform">Nintendo</div>
+          <div class="game-desc">Un clásico eterno. El plomero más famoso del mundo digital.</div>
+        </div>
+        <div class="game-card">
+          <div class="game-icon">🗡️</div>
+          <div class="game-name">Legend of Zelda</div>
+          <div class="game-platform">Nintendo</div>
+          <div class="game-desc">Link, Hyrule, la Trifuerza. Aventura y puzzles en su máxima expresión.</div>
+        </div>
+        <div class="game-card">
+          <div class="game-icon">🦍</div>
+          <div class="game-name">Donkey Kong</div>
+          <div class="game-platform">Nintendo</div>
+          <div class="game-desc">El gorila más icónico. Plataformas clásicas que nunca envejecen.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB: FÚTBOL -->
+    <div class="rd-panel" id="tab-futbol">
+      <div class="futbol-wrapper">
+        <div class="team-card america">
+          <div class="team-badge-big">🦅</div>
+          <div class="team-info">
+            <div class="team-label">EQUIPO DEL CORAZÓN</div>
+            <div class="team-name">Club América</div>
+            <div class="team-sub">Liga MX — México</div>
+            <div class="team-desc">Las Águilas del América. El equipo más ganador de México. Amor de toda la vida — no hay argumento que valga, el América es el América.</div>
+            <div class="team-stars">
+              <span class="star active">★</span><span class="star active">★</span><span class="star active">★</span><span class="star active">★</span><span class="star active">★</span>
+            </div>
+          </div>
+        </div>
+        <div class="team-card barcelona secondary-team">
+          <div class="team-badge-big">🔵🔴</div>
+          <div class="team-info">
+            <div class="team-label">SEGUNDO PLANO (MUY SEGUNDO)</div>
+            <div class="team-name">FC Barcelona</div>
+            <div class="team-sub">La Liga — España</div>
+            <div class="team-desc">En un muy lejano segundo lugar. El Barça tiene su encanto con el tiki-taka y la identidad de cantera, pero nunca va a superar al América.</div>
+            <div class="team-stars">
+              <span class="star active">★</span><span class="star active">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB: MUNDO -->
+    <div class="rd-panel" id="tab-mundo">
+      <div class="mundo-grid">
+        <div class="mundo-card big">
+          <div class="mundo-icon">🌺</div>
+          <div class="mundo-label">RAÍCES</div>
+          <div class="mundo-title">Pantla, Veracruz</div>
+          <p class="mundo-desc">Soy de Pantla y amo mi cultura Totonaca. Una civilización que construyó El Tajín, inventó la vainilla y tiene una de las tradiciones más ricas de México — los Voladores de Papantla.</p>
+        </div>
+        <div class="mundo-card">
+          <div class="mundo-icon">✈️</div>
+          <div class="mundo-label">HOBBY</div>
+          <div class="mundo-title">Viajar</div>
+          <p class="mundo-desc">Me gusta conocer lugares, culturas y comidas nuevas. Cada viaje es una expansión del mapa.</p>
+        </div>
+        <div class="mundo-card">
+          <div class="mundo-icon">🎨</div>
+          <div class="mundo-label">PERSONAJE HISTÓRICO FAV</div>
+          <div class="mundo-title">Leonardo da Vinci</div>
+          <p class="mundo-desc">El hombre que fue artista, ingeniero, científico y anatomista. El dev full stack del Renacimiento.</p>
+        </div>
+        <div class="mundo-card">
+          <div class="mundo-icon">✝️</div>
+          <div class="mundo-label">FIGURA HISTÓRICA FAV #2</div>
+          <div class="mundo-title">San Agustín</div>
+          <p class="mundo-desc">Filósofo, teólogo, escritor. Las Confesiones es uno de los textos más honestos escritos jamás.</p>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="contact" class="section" style="padding-left:0;padding-right:0;border-top:1px solid rgba(255,255,255,0.06);">
+    <div class="section-header reveal">
+      <div class="section-eyebrow">// CONTACTO</div>
+      <h2 class="section-title">¿Armamos equipo?</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="contact-wrapper">
+      <div class="contact-text reveal">
+        <p>Si tienes un proyecto interesante, quieres colaborar, o simplemente quieres hablar de Pokémon o de Rust — escríbeme.</p>
+        <p>Estoy disponible para proyectos freelance, colaboraciones y oportunidades interesantes.</p>
+        <div class="contact-links">
+          <a href="mailto:victor@example.com" class="contact-link">
+            <span class="contact-icon">📧</span>
+            victor@email.com
+          </a>
+          <a href="https://github.com/victormom" class="contact-link" target="_blank">
+            <span class="contact-icon">🐙</span>
+            github.com/victormom
+          </a>
+          <a href="https://linkedin.com/in/victormom" class="contact-link" target="_blank">
+            <span class="contact-icon">💼</span>
+            linkedin.com/in/victormom
+          </a>
+        </div>
+      </div>
+      <div class="contact-form-placeholder reveal">
+        <div class="form-group">
+          <label class="form-label">NOMBRE</label>
+          <input class="form-input" type="text" placeholder="Tu nombre...">
+        </div>
+        <div class="form-group">
+          <label class="form-label">EMAIL</label>
+          <input class="form-input" type="email" placeholder="tu@email.com">
+        </div>
+        <div class="form-group">
+          <label class="form-label">MENSAJE</label>
+          <textarea class="form-input form-textarea" placeholder="Cuéntame de tu proyecto o di hola..."></textarea>
+        </div>
+        <button class="btn-primary" style="width:100%;text-align:center;" onclick="alert('¡Mensaje recibido, Entrenador! 🔥')">ENVIAR MENSAJE</button>
+      </div>
+    </div>
+  </section>
 </div>
 
-                <!-- Proyecto 2 -->
-                <div class="project-card">
-                    <div class="project-image color3-bg">
-                        <div class="project-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <rect x="3" y="3" width="7" height="7"></rect>
-                                <rect x="14" y="3" width="7" height="7"></rect>
-                                <rect x="14" y="14" width="7" height="7"></rect>
-                                <rect x="3" y="14" width="7" height="7"></rect>
-                            </svg>
-                        </div>
-                        <div class="project-badge">Proyecto 2</div>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Dashboard Analítico</h3>
-                        <p class="project-description">Panel de control con visualizaciones de datos y métricas en tiempo real.</p>
-                        <div class="project-tags">
-                            <span class="tag">React</span>
-                            <span class="tag">Charts</span>
-                            <span class="tag">API</span>
-                        </div>
-                        <a href="#" target="_blank" class="project-link">
-                            Ver Proyecto
-                            <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
-                                <path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Proyecto 3 -->
-                <div class="project-card">
-                    <div class="project-image color5-bg">
-                        <div class="project-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <line x1="12" y1="5" x2="12" y2="19"></line>
-                                <line x1="5" y1="12" x2="19" y2="12"></line>
-                            </svg>
-                        </div>
-                        <div class="project-badge">Próximamente</div>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Próximamente</h3>
-                        <p class="project-description">Nuevos proyectos emocionantes en desarrollo. ¡Mantente atento!</p>
-                        <div class="project-tags">
-                            <span class="tag">En desarrollo</span>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact-section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Contacto</h2>
-                <div class="section-underline"></div>
-            </div>
-            <div class="contact-content">
-                <p>¿Tienes un proyecto en mente? ¡Hablemos!</p>
-                <div class="contact-links">
-                    <a href="mailto:tu@email.com" class="contact-btn">
-                        <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
-                            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
-                        </svg>
-                        <span>Email</span>
-                    </a>
-                    <a href="https://github.com/victormom" target="_blank" class="contact-btn">
-                        <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
-                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                        </svg>
-                        <span>GitHub</span>
-                    </a>
-                    <a href="https://linkedin.com/in/victormom" target="_blank" class="contact-btn">
-                        <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
-                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                        </svg>
-                        <span>LinkedIn</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-content">
-            <p>&copy; 2024 Victor Olmedo. Todos los derechos reservados.</p>
-            <p class="footer-subtitle">Hecho con 💚 y mucho código</p>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
+<!-- FOOTER -->
+<footer>
+  <div class="footer-pixel">
+    © 2025 <span>VICTOR OLMEDO</span> — DEV &amp; TRAINER<br>
+    HECHO CON <span>♥</span> PHP RUST LINUX Y MUCHO POKÉMON GO<br>
+    <span>⚡ TEAM INSTINCT FOREVER ⚡</span>
+  </div>
+</footer>
+<script src="js/main.js"></script>
 </body>
 </html>
