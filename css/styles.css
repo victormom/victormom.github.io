@@ -1183,3 +1183,186 @@
 .mundo-title { font-family: var(--pixel); font-size: 11px; color: var(--white); margin-bottom: 8px; line-height: 1.6; }
 .mundo-desc { font-size: 13px; color: var(--gray2); line-height: 1.7; }
 @media (max-width: 600px) { .mundo-grid { grid-template-columns: 1fr; } .mundo-card.big { grid-column: span 1; } }
+
+/* ================================================================
+   POKÉMON NAV BAR
+================================================================ */
+.poke-nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  background: #0d1117;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  box-shadow: 0 2px 20px rgba(0,0,0,0.5);
+}
+
+.poke-nav-inner {
+  display: flex;
+  align-items: stretch;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  height: 72px;
+  gap: 0;
+}
+
+.poke-nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 0 18px;
+  text-decoration: none;
+  color: var(--gray2);
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 500;
+  transition: background 0.15s, color 0.15s;
+  position: relative;
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+  min-width: 80px;
+}
+
+.poke-nav-item:hover {
+  background: rgba(255,255,255,0.04);
+  color: var(--white);
+  border-bottom-color: var(--yellow);
+}
+
+.poke-nav-item.active {
+  color: var(--white);
+  border-bottom-color: var(--yellow);
+  background: rgba(4,157,217,0.06);
+}
+
+.poke-nav-home {
+  background: rgba(4,157,217,0.08);
+  border-bottom-color: var(--yellow) !important;
+  color: var(--white) !important;
+  min-width: 90px;
+}
+
+.poke-nav-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+}
+
+.poke-nav-item span {
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.poke-nav-divider {
+  width: 1px;
+  background: rgba(255,255,255,0.07);
+  margin: 14px 0;
+  flex-shrink: 0;
+}
+
+.poke-nav-colorbar {
+  display: flex;
+  height: 4px;
+}
+
+/* Ajustar hero padding por nav más alto */
+#hero { padding-top: 96px; }
+
+@media (max-width: 768px) {
+  .poke-nav-inner { height: 56px; gap: 0; padding: 0 0.25rem; overflow-x: auto; scrollbar-width: none; }
+  .poke-nav-inner::-webkit-scrollbar { display: none; }
+  .poke-nav-item { padding: 0 10px; font-size: 9px; min-width: 58px; }
+  .poke-nav-icon { width: 26px; height: 26px; }
+  .poke-nav-icon svg { width: 20px; height: 20px; }
+  .poke-nav-divider { display: none; }
+  #hero { padding-top: 76px; }
+}
+
+/* ================================================================
+   TUX RUNNER GAME
+================================================================ */
+.tux-section { display: none; }
+.tux-section.visible { display: block !important; }
+
+.tux-game-wrapper {
+  background: var(--dark2);
+  border: 2px solid rgba(82,191,65,0.3);
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+}
+
+#tuxCanvas {
+  display: block;
+  width: 100%;
+  height: auto;
+  image-rendering: pixelated;
+  background: #0d1117;
+}
+
+.tux-ui {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 20px;
+  background: rgba(255,255,255,0.02);
+  border-top: 1px solid rgba(255,255,255,0.06);
+  justify-content: flex-end;
+}
+
+.tux-score-label, .tux-hi-label {
+  font-family: var(--pixel);
+  font-size: 8px;
+  color: var(--gray2);
+}
+
+.tux-score, .tux-hi {
+  font-family: var(--pixel);
+  font-size: 12px;
+  color: var(--yellow);
+  min-width: 60px;
+  text-align: right;
+}
+
+.tux-msg {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--pixel);
+  font-size: 10px;
+  color: var(--white);
+  background: rgba(13,17,23,0.7);
+  gap: 10px;
+  letter-spacing: 1px;
+}
+
+/* Offline banner */
+.offline-banner {
+  display: none;
+  position: fixed;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--dark2);
+  border: 2px solid var(--yellow);
+  border-radius: 100px;
+  padding: 10px 24px;
+  font-family: var(--pixel);
+  font-size: 9px;
+  color: var(--yellow);
+  z-index: 500;
+  cursor: pointer;
+  animation: bounceIn 0.4s ease;
+  white-space: nowrap;
+}
+
+@keyframes bounceIn {
+  from { opacity:0; transform: translateX(-50%) translateY(20px); }
+  to   { opacity:1; transform: translateX(-50%) translateY(0); }
+}
